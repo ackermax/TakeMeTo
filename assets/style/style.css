@@ -9,3 +9,12 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
+
+#main-logo {
+
+	font-family: 'Sacramento', cursive;
+	font-size: 150px;
+	text-align: center;
+	color: white;
+
+}

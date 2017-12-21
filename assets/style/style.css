@@ -1,10 +1,11 @@
-/*.header {
+/*#title-logo{
 
-	color: white;
+	font-family: 'Sacramento', cursive;
 }*/
 
 body {
 
 	background-image: url("../images/city-park-bench.jpg");
-
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }

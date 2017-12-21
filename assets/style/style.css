@@ -18,3 +18,16 @@ body {
 	color: white;
 
 }
+
+#main-panel-header {
+
+	font-size: 40px;
+
+}
+
+.card-title {
+
+	font-family: 'Sacramento', cursive;
+	font-size: 500px;
+
+}

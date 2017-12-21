@@ -28,6 +28,11 @@ body {
 .card-title {
 
 	font-family: 'Sacramento', cursive;
-	font-size: 500px;
+
+}
+
+#card-header {
+
+	font-size: 40px;
 
 }

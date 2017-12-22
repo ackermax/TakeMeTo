@@ -1,7 +1,8 @@
 #navbar {
 
 	font-family: 'Sacramento', cursive;
-	background-image: url("../images/rainbow-gradient.png")
+	/*background-image: url("../images/rainbow-gradient.png")*/
+	background-color: black;
 
 }
 

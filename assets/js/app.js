@@ -4,16 +4,17 @@ $(document).ready(function () {
 
 var landmark = "harajuku"
 
-var queryURLrest="https://maps.googleapis.com/maps/api/place/textsearch/xml?query=" + landmark + "&type=restaurant&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
+var queryURLrest="https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=restaurant&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
 
-queryURLlodg="https://maps.googleapis.com/maps/api/place/textsearch/xml?query=" + landmark + "&type=lodging&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
+queryURLlodg="https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=lodging&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
 
 
 $.ajax({
 	url: queryURLrest,
 	method: "GET"
 }).done(function(response) {
-	console.log(response.PlaceSearchResponse[0].name);
+  console.log(response);
+  console.log(response.results["0"].name);
 });
 
 $.ajax({

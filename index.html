@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-	<title>takemeto</title>
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>takemeto</title>
+	<!-- add firebase -->
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+	<!-- Add jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- add javascript	 -->
+	<script src="assets/js/app.js"></script>
 	<!-- Added Google Fonts family -->
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 	<!--   Added our CSS sheet -->
@@ -16,6 +26,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 </head>
+
 <body>
 	<!-- This container holds our header -->
 	<div class="container">
@@ -26,15 +37,20 @@
 		</div>
 	</div>
 	<!-- 	This container will hold our panels with image and content -->
-	<div class="parallax-container">
-		<div class="parallax">
+	<div class="container">
+		
 			<div class="section white">
 				<div class="row container">
 					<h2 class="header center-align" id="main-panel-header">For those who wander, online and off</h2>
-					<p class="grey-text tet-darken-3 lighten-3 center-align">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an. Ei eius alterum facilisi quo, est in audiam honestatis, nemore quaeque epicuri sea eu. Sonet doctus convenire pro eu. Natum insolens sententiae vel et, mel ludus option iisque id. An duo assum suscipit laboramus.</p>
+					<form>
+							<input type="file" name="" id="photo1">
+							<button id="submit">Upload Image</button>
+						</form>
+					<br>
+					<img src="" id="imagestay" width="200px">
 				</div>
 			</div>
-		</div>
+		
 	</div>
 	<!-- 	This container will hold the content populated by the API when a user drags in an image -->
 	<div class="container">
@@ -47,7 +63,8 @@
 						<span class="card-title" id="card-header">Flights</span>
 					</div>
 					<div class="card-content">
-						<p class="grey-text tet-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
+						<p class="grey-text tet-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum.
+							Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
 					</div>
 					<div class="card-action">
 						<a href="#">Link to flights</a>
@@ -62,7 +79,7 @@
 						<span class="card-title" id="card-header">Dine</span>
 					</div>
 					<div class="card-content">
-						<p class="grey-text tet-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
+							
 					</div>
 					<div class="card-action">
 						<a href="#">Link to restaurants</a>
@@ -77,7 +94,8 @@
 						<span class="card-title" id="card-header">Stay</span>
 					</div>
 					<div class="card-content">
-						<p class="grey-text tet-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
+						<p class="grey-text tet-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum.
+							Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
 					</div>
 					<div class="card-action">
 						<a href="#">Link to hotels</a>
@@ -86,7 +104,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+	</div>
 
 </body>
 

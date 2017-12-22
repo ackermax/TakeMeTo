@@ -3,6 +3,8 @@
 <html>
 <head>
 	<title>takemeto</title>
+	<!-- add firebase -->
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
 	<!-- Added Google Fonts family -->
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
@@ -13,11 +15,18 @@
 	<!-- Added CSS for Materialize -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-	<!-- Added our JS file -->
-	<script type="text/javascript" href="assets/js/app.js"></script>
+	<!-- Added jQuery -->
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+
 
 	<!-- Added JavaScript for Materialize-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+		<!-- Added our JS file -->
+	<script type="text/javascript" src="assets/js/app.js"></script>
 
 </head>
 <body>
@@ -48,7 +57,8 @@
         </nav>
     </div>
 </div>
-<nav class="orange lighten-2 flat hide-on-med-and-down">
+<!-- Search functionality for nav bar -->
+<nav class="black lighten-2 flat hide-on-med-and-down">
     <div class="nav-wrapper container">
         <form>
             <div class="input-field">
@@ -81,8 +91,15 @@
 					<div class="col m12 center-align">
 							<!-- <a class="waves-effect waves-light btn" id="button-action" input name="myFile" type="file">button</a> -->
 						<form>
-							<input type="file" name="" id="photo1">			<button id="submit-photo">Add Image</button>
+							<input type="file" name="" id="photo1">			<button id="submit">Add Image</button>
 						</form>
+					<div class="row container" id="image-hold">
+						
+						<img src="" id="imagestay">
+
+
+					</div>
+
 				    </div>
 				</div>
 			</div>
@@ -137,13 +154,13 @@
 				</div>
 			</div>
 		</div>
-	</div>
+<!-- 	</div> -->
 		<!--Adding footer -->
 	<footer class="page-footer" id="page-foot">
 		<div class="container">
 			<div class="row">
 				<div class="col 16 s12">
-					<h5 class="white-text text-darken-3 lighten-3">About takemeto</h5>
+					<h5 class="white-text text-darken-3 lighten-3" id="footer-head">About takemeto</h5>
 					<p class="white-text text-darken-3 lighten-3">A project by team JEMS of the UCF Coding Bootcamp using HTML, Materialize CSS framework, custom CSS, Iframes, AJAX requests from several API sources</p>
 					<ul>
 						<li><a class="white-text text-darken-3 lighten-3" href="https://github.com/ackermax/TakeMeTo" target="blank">Github</a></li>

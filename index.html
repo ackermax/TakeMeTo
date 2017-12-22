@@ -1,71 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TakeMeTo</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-    <script src="https://momentjs.com/downloads/moment.js"></script>
-    <script src="assets/js/script.js"></script>
+	<title>takemeto</title>
+
+	<!-- Added Google Fonts family -->
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	<!--   Added our CSS sheet -->
+	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
+
+	<!-- Added CSS for Materialize -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+	<!-- Added JavaScript for Materialize-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
 </head>
-
 <body>
-    <div class="container">
-        <br>
-        <br>
-        <div class="row">
-            <div class="jumbotron text-center">
-                <h1>Welcome to TakeMeTo</h1>
-                <br>
-                <h4>Where is that? Let's go there.</h4>
-            </div>
-        </div>
+	<!-- This container holds our header -->
+	<div class="container">
+		<div class="row">
+			<div class="col m12" id="header">
+				<h1 id="main-logo">takemeto</h1>
+			</div>
+		</div>
+	</div>
+	<!-- 	This container will hold our panels with image and content -->
+	<div class="parallax-container">
+		<div class="parallax">
+			<div class="section white">
+				<div class="row container">
+					<h2 class="header center-align" id="main-panel-header">For those who wander, online and off</h2>
+					<p class="grey-text tet-darken-3 lighten-3 center-align">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an. Ei eius alterum facilisi quo, est in audiam honestatis, nemore quaeque epicuri sea eu. Sonet doctus convenire pro eu. Natum insolens sententiae vel et, mel ludus option iisque id. An duo assum suscipit laboramus.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 	This container will hold the content populated by the API when a user drags in an image -->
+	<div class="container">
+		<div class="row">
+			<div class="col s12 m4">
+				<!-- First card for flight information -->
+				<div class="card medium">
+					<div class="card-image">
+						<img src="assets/images/airplane-card-2-thumbnail.jpg" class="responsive-img">
+						<span class="card-title" id="card-header">Flights</span>
+					</div>
+					<div class="card-content">
+						<p class="grey-text tet-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
+					</div>
+					<div class="card-action">
+						<a href="#">Link to flights</a>
+					</div>
+				</div>
+			</div>
+			<!-- Second card for dining -->
+			<div class="col s12 m4">
+				<div class="card medium">
+					<div class="card-image">
+						<img src="assets/images/dine-card.jpg" class="responsive-img">
+						<span class="card-title" id="card-header">Dine</span>
+					</div>
+					<div class="card-content">
+						<p class="grey-text tet-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
+					</div>
+					<div class="card-action">
+						<a href="#">Link to restaurants</a>
+					</div>
+				</div>
+			</div>
+			<!-- Third card for stays -->
+			<div class="col s12 m4">
+				<div class="card medium">
+					<div class="card-image">
+						<img src="assets/images/hotel-card.png" class="responsive-img">
+						<span class="card-title" id="card-header">Stay</span>
+					</div>
+					<div class="card-content">
+						<p class="grey-text tet-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
+					</div>
+					<div class="card-action">
+						<a href="#">Link to hotels</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-        <div class="row">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    Get started...
-                </div>
-                <div class="panel-body">
-                    <form>
-                        <br>
-                        <div class="form-group">
-                            <label for="imageUpload">Upload an Image:</label>
-                            <input class="form-control" id="train-name-input" type="text" value="//... we'll need a javascript/jquery uploader...">
-                        </div>
-                        <div class="form-group">
-                            <label for="home-input">Current Location</label>
-                            <input class="form-control" id="home-input" type="text" value="//...this will track location...">
-                        </div>
-                        <div class="form-group">
-                            <label for="user-email">Email:</label>
-                            <input class="form-control" id="user-email" type="email" value="email@email.gov">
-                        </div>
-                        <div class="form-group">
-                            <label for="user-name">Name:</label>
-                            <input class="form-control" id="user-name" type="text" value="e.g. John Smith">
-                        </div>
-                        <button class="btn btn-primary" id="user-submit">Submit</button>
-                        <br>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

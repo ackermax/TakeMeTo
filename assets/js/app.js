@@ -83,8 +83,31 @@ $(document).ready(function () {
 
         .done(function(data) {
             // Show formatted JSON on webpage.
-           landmark = data.categories[1].detail.landmarks[0].name;
+            console.log(data);
+           landmark = data.categories[0].detail.landmarks[0].name;
            console.log(landmark);
+
+           //sharona's places api code
+           var queryURLrest="https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=restaurant&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
+           
+           queryURLlodg="https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=lodging&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
+           
+           
+           $.ajax({
+               url: queryURLrest,
+               method: "GET"
+           }).done(function(response) {
+             console.log(response);
+             console.log(response.results["0"].name);
+           });
+           
+           $.ajax({
+               url: queryURLlodg,
+               method: "GET"
+           }).done(function(response) {
+               console.log(response);
+           });
+           
         })
         
 

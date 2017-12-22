@@ -17,58 +17,58 @@
 
 	<!-- Added jQuery -->
 	<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+	src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
 
 
 
 	<!-- Added JavaScript for Materialize-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-		<!-- Added our JS file -->
+	<!-- Added our JS file -->
 	<script type="text/javascript" src="assets/js/app.js"></script>
 
 </head>
 <body>
-<!-- 	This wrapper holds our navigation bar -->
-<div id="nav">
-    <div class="navbar-fixed">
-        <nav class="black">
-            <div class="nav-wrapper container">
-                <a href="#!" class="brand-logo">&nbsp;takemeto</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity"></i></a></li>
-                    <li><a href="#"><i class="mdi-navigation-refresh"></i></a></li>
-                    <li><a href="#"><i class="mdi-navigation-more-vert"></i></a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li>
-                        <a href="#">
-                            <input id="search" type="search" placeholder="search">
-                        </a>
-                    </li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</div>
-<!-- Search functionality for nav bar -->
-<nav class="black lighten-2 flat hide-on-med-and-down">
-    <div class="nav-wrapper container">
-        <form>
-            <div class="input-field">
-                <input id="search" type="search" required="">
-                <label for="search"><i class="mdi-action-search"></i></label>
-                <i class="mdi-navigation-close"></i>
-            </div>
-        </form>
-    </div>
-</nav>
+	<!-- 	This wrapper holds our navigation bar -->
+	<div id="nav">
+		<div class="navbar-fixed">
+			<nav class="black">
+				<div class="nav-wrapper container">
+					<a href="#!" class="brand-logo">&nbsp;takemeto</a>
+					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity"></i></a></li>
+						<li><a href="#"><i class="mdi-navigation-refresh"></i></a></li>
+						<li><a href="#"><i class="mdi-navigation-more-vert"></i></a></li>
+					</ul>
+					<ul class="side-nav" id="mobile-demo">
+						<li>
+							<a href="#">
+								<input id="search" type="search" placeholder="search">
+							</a>
+						</li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+						<li><a href="#">Link</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<!-- Search functionality for nav bar -->
+	<nav class="black lighten-2 flat hide-on-med-and-down">
+		<div class="nav-wrapper container">
+			<form>
+				<div class="input-field">
+					<input id="search" type="search" required="">
+					<label for="search"><i class="mdi-action-search"></i></label>
+					<i class="mdi-navigation-close"></i>
+				</div>
+			</form>
+		</div>
+	</nav>
 	<!-- This container holds our header -->
 	<div class="container">
 		<div class="row">
@@ -79,80 +79,85 @@
 	</div>
 	<!-- 	This container will hold our panels with image and content -->
 	<div class="container">
-			<div class="section white z-depth-5" id="main-panel">
-				<div class="row">
-					<div class="col m12">
-						<h2 class="header center-align" id="main-panel-header">For those who wander, online and off</h2>
-						<p class="grey-text text-darken-3 lighten-3 center-align">Upload an image of a place that inspires you below.</p>
-							<p class="divider"></p>
-					</div>
+		<div class="section white z-depth-5" id="main-panel">
+			<div class="row">
+				<div class="col m12">
+					<h2 class="header center-align" id="main-panel-header">For those who wander, online and off</h2>
+					<p class="grey-text text-darken-3 lighten-3 center-align">Upload an image of a place that inspires you below.</p>
+					<p class="divider"></p>
 				</div>
-				<div class="row container" id="button-row">
-					<div class="col m12 center-align">
-							<!-- <a class="waves-effect waves-light btn" id="button-action" input name="myFile" type="file">button</a> -->
-						<form>
-							<input type="file" name="" id="photo1">			<button id="submit">Add Image</button>
-						</form>
-						<!-- Container holds our image -->
-						<div class="row container" id="image-hold">
-							<img src="" id="imagestay">
-						</div>
-				    </div>
+			</div>
+			<div class="row container" id="button-row">
+				<div class="col m12 center-align">
+					<!-- <a class="waves-effect waves-light btn" id="button-action" input name="myFile" type="file">button</a> -->
+					<form>
+						<input type="file" name="" id="photo1">			<button id="submit">Add Image</button>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- 	This container will hold the content populated by the API when a adds an image -->
+		<!-- Secondary panel shows after user submits the image uploaded -->
 	<div class="container">
-		<div class="row">
-			<div class="col s12 m4">
-				<!-- First card for flight information -->
-				<div class="card medium">
-					<div class="card-image">
-						<img src="assets/images/airplane-card-2-thumbnail.jpg" class="responsive-img">
-						<span class="card-title" id="card-header">Flights</span>
+		<div class="section white-text z-depth-5" id="secondary-panel">
+			<div class="row center-align">
+				<div class="col m12">
+					<!-- Container holds our image -->
+					<div class="row container" id="image-hold">
+						<img src="" id="imagestay">
 					</div>
-					<div class="card-content">
-						<p class="grey-text text-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
-					</div>
-					<div class="card-action">
-						<a href="#">Link to flights</a>
-					</div>
+</div>
+<!-- 	Container holds cards showcasing UI possibilities-->
+<div class="container">
+	<div class="row">
+		<div class="col s12 m4">
+			<!-- First card for flight information -->
+			<div class="card medium">
+				<div class="card-image">
+					<img src="assets/images/airplane-card-2-thumbnail.jpg" class="responsive-img">
+					<span class="card-title" id="card-header">Fly</span>
 				</div>
-			</div>
-			<!-- Second card for dining -->
-			<div class="col s12 m4">
-				<div class="card medium">
-					<div class="card-image">
-						<img src="assets/images/dine-card.jpg" class="responsive-img">
-						<span class="card-title" id="card-header">Dine</span>
-					</div>
-					<div class="card-content">
-						<p class="grey-text text-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
-					</div>
-					<div class="card-action">
-						<a href="#">Link to restaurants</a>
-					</div>
+				<div class="card-content">
+					<p class="grey-text text-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
 				</div>
-			</div>
-			<!-- Third card for stays -->
-			<div class="col s12 m4">
-				<div class="card medium">
-					<div class="card-image">
-						<img src="assets/images/hotel-card.png" class="responsive-img">
-						<span class="card-title" id="card-header">Stay</span>
-					</div>
-					<div class="card-content">
-						<p class="grey-text text-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
-					</div>
-					<div class="card-action">
-						<a href="#">Link to hotels</a>
-					</div>
+				<div class="card-action">
+					<a href="#">Link to flights</a>
 				</div>
 			</div>
 		</div>
-<!-- 	</div> -->
-		<!--Adding footer -->
+		<!-- Second card for dining -->
+		<div class="col s12 m4">
+			<div class="card medium">
+				<div class="card-image">
+					<img src="assets/images/dine-card.jpg" class="responsive-img">
+					<span class="card-title" id="card-header">Dine</span>
+				</div>
+				<div class="card-content">
+					<p class="grey-text text-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
+				</div>
+				<div class="card-action">
+					<a href="#">Link to restaurants</a>
+				</div>
+			</div>
+		</div>
+		<!-- Third card for stays -->
+		<div class="col s12 m4">
+			<div class="card medium">
+				<div class="card-image">
+					<img src="assets/images/hotel-card.png" class="responsive-img">
+					<span class="card-title" id="card-header">Stay</span>
+				</div>
+				<div class="card-content">
+					<p class="grey-text text-darken-3 lighten-3">Lorem ipsum dolor sit amet, cu pro nibh ludus splendide, pri ex modo hendrerit moderatius, sea ea vide singulis argumentum. Id volumus principes posidonium eam, omittam lucilius insolens eam an.</p>
+				</div>
+				<div class="card-action">
+					<a href="#">Link to hotels</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 	</div> -->
+	<!--Adding footer -->
 	<footer class="page-footer" id="page-foot">
 		<div class="container">
 			<div class="row">

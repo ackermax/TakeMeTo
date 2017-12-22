@@ -22,16 +22,43 @@
 </head>
 <body>
 <!-- 	This wrapper holds our navigation bar -->
-	<nav>
-		<div class="navbar-fixed" id="navbar">
-			<div class="nav-wrapper container">
-					<a href="#" class="brand-logo center">takemeto</a>
-						<ul id="nav-mobile" class="left hide-on-med-and-down">
-						<li><a href="#">Github</a></li>
-						</ul>
-			</div>
-		</div>
-	</nav>
+<div id="nav">
+    <div class="navbar-fixed">
+        <nav class="black">
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo">&nbsp;takemeto</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity"></i></a></li>
+                    <li><a href="#"><i class="mdi-navigation-refresh"></i></a></li>
+                    <li><a href="#"><i class="mdi-navigation-more-vert"></i></a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li>
+                        <a href="#">
+                            <input id="search" type="search" placeholder="search">
+                        </a>
+                    </li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<nav class="orange lighten-2 flat hide-on-med-and-down">
+    <div class="nav-wrapper container">
+        <form>
+            <div class="input-field">
+                <input id="search" type="search" required="">
+                <label for="search"><i class="mdi-action-search"></i></label>
+                <i class="mdi-navigation-close"></i>
+            </div>
+        </form>
+    </div>
+</nav>
 	<!-- This container holds our header -->
 	<div class="container">
 		<div class="row">

@@ -91,6 +91,8 @@ $(document).ready(function () {
            var queryURLrest="https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=restaurant&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
            
            queryURLlodg="https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=lodging&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
+
+           queryURLFlight="https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=airport&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
            
            
            $.ajax({
@@ -107,6 +109,14 @@ $(document).ready(function () {
            }).done(function(response) {
                console.log(response);
            });
+
+           $.ajax({
+            url: queryURLFlight,
+            method: "GET"
+        }).done(function(response) {
+          console.log(response);
+          
+        });
            
         })
         

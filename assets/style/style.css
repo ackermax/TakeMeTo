@@ -1,3 +1,10 @@
+#navbar {
+
+	font-family: 'Sacramento', cursive;
+	background-image: url("../images/rainbow-gradient.png")
+
+}
+
 body {
 
 	background-image: url("../images/city-park-bench.jpg");

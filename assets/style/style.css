@@ -52,3 +52,10 @@ body {
 	font-family: 'Sacramento', cursive;
 
 }
+
+.hide {
+	
+    visibility: hidden;
+    position: absolute;
+    top: -9999px;
+}

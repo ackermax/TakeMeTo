@@ -17,6 +17,8 @@ $(document).ready(function () {
     $("#submit").click(function (e) {
         e.preventDefault();
 
+        
+
         var file = document.getElementById('photo1').files[0];
         var name = (+new Date()) + '-' + file.name;
         var metadata = {
@@ -25,7 +27,9 @@ $(document).ready(function () {
         var task = ref.child(name).put(file, metadata);
         task.then((snapshot) => {
             url = snapshot.downloadURL;
-            $("#imagestay").attr("src", url);
+            $("<img>").attr({"src": url, "id": "imagestay", "class": "responsive-img"}).appendTo("#image-hold");
+            //empty the image select div
+        $("#image-picker").empty();
 
             //make a call with microsoft
             processImage(url);
@@ -103,7 +107,7 @@ $(document).ready(function () {
                     var resRes = response.results;
                     //make some html to put our best food in
 
-                    $("<li>").html('<div class="collapsible-header active"><i class="material-icons">restaurant</i>Dine</div><div class="collapsible-body card-panel white" id="fly-body"><ul class="collection" id="rest-data"></ul></div>').appendTo("#data-display");
+                    $("<li>").html('<div class="collapsible-header"><i class="material-icons">restaurant</i>Dine</div><div class="collapsible-body card-panel white" id="fly-body"><ul class="collection" id="rest-data"></ul></div>').appendTo("#data-display");
 
 
                     //make a for loop to make our list items
@@ -121,7 +125,7 @@ $(document).ready(function () {
                     var resRes = response.results;
                     //make some html to put our best lodging in
 
-                    $("<li>").html('<div class="collapsible-header active"><i class="material-icons">home</i>Stay</div><div class="collapsible-body card-panel white" id="fly-body"><ul class="collection" id="lodge-data"></ul></div>').appendTo("#data-display");
+                    $("<li>").html('<div class="collapsible-header"><i class="material-icons">home</i>Stay</div><div class="collapsible-body card-panel white" id="fly-body"><ul class="collection" id="lodge-data"></ul></div>').appendTo("#data-display");
 
                     //make a for loop to make our list items
                     for (var i = 0; i < resRes.length; i++) {
@@ -152,7 +156,7 @@ $(document).ready(function () {
                         }
                         setTimeout(function(){
                             //grab the airport and put that inside the html
-                            $("<li>").html('<div class="collapsible-header active"><i class="material-icons">local_airport</i>Fly</div><div class="collapsible-body card-panel white" id="fly-body"><p>The closest airport to your destination is the <a href="' + airURL + '" target="_blank">' + airport + '</a>.</p></div>').appendTo("#data-display");
+                            $("<li>").html('<div class="collapsible-header"><i class="material-icons">local_airport</i>Fly</div><div class="collapsible-body card-panel white" id="fly-body"><p>The closest airport to your destination is the <a href="' + airURL + '" target="_blank">' + airport + '</a>.</p></div>').appendTo("#data-display");
                         }, 2000);
                     });
 

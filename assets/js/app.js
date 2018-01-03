@@ -14,29 +14,26 @@ $(document).ready(function () {
 
 
     var ref = firebase.storage().ref();
+    $("#submit").click(function (e) {
+        e.preventDefault();
 
+        var file = document.getElementById('photo1').files[0];
+        var name = (+new Date()) + '-' + file.name;
+        var metadata = {
+            contentType: file.type
+        };
+        var task = ref.child(name).put(file, metadata);
+        task.then((snapshot) => {
+            url = snapshot.downloadURL;
+            $("#imagestay").attr("src", url);
 
-    $("#submit").click(function(e){
-    e.preventDefault();
-    console.log("got it");
+            //make a call with microsoft
+            processImage(url);
 
-    var file = document.getElementById('photo1').files[0];
-    var name = (+new Date()) + '-' + file.name;
-    var metadata = {
-        contentType: file.type
-    };
-    var task = ref.child(name).put(file, metadata);
-    task.then((snapshot) => {
-        url = snapshot.downloadURL;
-        $("#imagestay").attr("src", url);
-
-        //make a call with microsoft
-        processImage(url);
-
-    }).catch((error) => {
-        console.error(error);
+        }).catch((error) => {
+            console.error(error);
+        });
     });
-});
 
 
     function processImage() {
@@ -66,15 +63,15 @@ $(document).ready(function () {
 
         // Display the image.
         var sourceImageUrl = url;
-        
+
 
         // Perform the REST API call.
         $.ajax({
             url: uriBase + "?" + $.param(params),
 
             // Request headers.
-            beforeSend: function(xhrObj){
-                xhrObj.setRequestHeader("Content-Type","application/json");
+            beforeSend: function (xhrObj) {
+                xhrObj.setRequestHeader("Content-Type", "application/json");
                 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
             },
 
@@ -84,19 +81,71 @@ $(document).ready(function () {
             data: '{"url": ' + '"' + sourceImageUrl + '"}',
         })
 
-        .done(function(data) {
-            // Show formatted JSON on webpage.
-           landmark = data.categories[1].detail.landmarks[0].name;
-           console.log(landmark);
-        })
-        
+            .done(function (data) {
+                // Show formatted JSON on webpage.
+                console.log(data);
+                landmark = data.categories[0].detail.landmarks[0].name;
+                console.log(landmark);
 
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            // Display error message.
-            var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
-            errorString += (jqXHR.responseText === "") ? "" : jQuery.parseJSON(jqXHR.responseText).message;
-            alert(errorString);
-        });
+                //sharona's places api code
+                var queryURLrest = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=restaurant&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
+
+                var queryURLlodg = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=lodging&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
+
+                var queryURLFlight = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=airport&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
+
+
+                $.ajax({
+                    url: queryURLrest,
+                    method: "GET"
+                }).done(function (response) {
+                    console.log(response);
+                    var resRes = response.results;
+                    //make some html to put our best food in
+                    $("<li>").html('<div class="collapsible-header"><i class="material-icons">restaurant</i>Dine</div><div class="collapsible-body card-panel white" id="fly-body"><ul class="collection" id="rest-data"></ul></div>').appendTo("#data-display");
+
+                    //make a for loop to make our list items
+                    for (var i = 0; i < resRes.length; i++) {
+                        //make an li tag and append it to the list tag
+                        $("<li>").html("<a href='https://www.google.com/maps/place/?q=place_id:" + resRes[i].place_id + "' target='_blank'>" + resRes[i].name + "</a>").appendTo("#rest-data");
+                    }
+                    console.log(response.results[0].name);
+                });
+
+                $.ajax({
+                    url: queryURLlodg,
+                    method: "GET"
+                }).done(function (response) {
+                    var resRes = response.results;
+                    //make some html to put our best lodging in
+                    $("<li>").html('<div class="collapsible-header"><i class="material-icons">home</i>Stay</div><div class="collapsible-body card-panel white" id="fly-body"><ul class="collection" id="lodge-data"></ul></div>').appendTo("#data-display");
+
+                    //make a for loop to make our list items
+                    for (var i = 0; i < resRes.length; i++) {
+                        //make an li tag and append it to the list tag
+                        $("<li>").html("<a href='https://www.google.com/maps/place/?q=place_id:" + resRes[i].place_id + "' target='_blank'>" + resRes[i].name + "</a>").appendTo("#lodge-data");
+                    }
+                });
+
+                $.ajax({
+                    url: queryURLFlight,
+                    method: "GET"
+                }).done(function (response) {
+                    console.log(response);
+                    //grab the airport and put that inside the html
+                    $("<li>").html('<div class="collapsible-header"><i class="material-icons">local_airport</i>Fly</div><div class="collapsible-body card-panel white" id="fly-body"><p>The closest airport to your destination is the ' + response.results[0].name +'.</p></div>').appendTo("#data-display")
+
+                });
+
+            })
+
+
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                // Display error message.
+                var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
+                errorString += (jqXHR.responseText === "") ? "" : jQuery.parseJSON(jqXHR.responseText).message;
+                console.log(errorString);
+            });
     };
 
 });

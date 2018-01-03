@@ -17,7 +17,7 @@ $(document).ready(function () {
     $("#submit").click(function (e) {
         e.preventDefault();
 
-        
+
 
         var file = document.getElementById('photo1').files[0];
         var name = (+new Date()) + '-' + file.name;
@@ -27,9 +27,10 @@ $(document).ready(function () {
         var task = ref.child(name).put(file, metadata);
         task.then((snapshot) => {
             url = snapshot.downloadURL;
-            $("<img>").attr({"src": url, "id": "imagestay", "class": "responsive-img"}).appendTo("#image-hold");
+            $("<img>").attr({ "src": url, "id": "imagestay", "class": "responsive-img" }).appendTo("#image-hold");
             //empty the image select div
-        $("#image-picker").empty();
+            $("#button-row").empty();
+            $("#directive").empty();
 
             //make a call with microsoft
             processImage(url);
@@ -87,9 +88,12 @@ $(document).ready(function () {
 
             .done(function (data) {
                 // Show formatted JSON on webpage.
-                console.log(data);
+
                 landmark = data.categories[0].detail.landmarks[0].name;
-                console.log(landmark);
+
+                //make a text tag with the landmark name.
+
+                $("<h2>").text("TakeMeTo... " + landmark).appendTo("#button-row").attr("id", "landmark-text");
 
                 //sharona's places api code
                 var queryURLrest = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=restaurant&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
@@ -103,7 +107,7 @@ $(document).ready(function () {
                     url: queryURLrest,
                     method: "GET"
                 }).done(function (response) {
-                    console.log(response);
+
                     var resRes = response.results;
                     //make some html to put our best food in
 
@@ -151,10 +155,10 @@ $(document).ready(function () {
                                 console.log(data[i].iata);
                                 var iata = data[i].iata;
                                 airURL = "https://www.google.com/flights/#search;t=" + iata;
-                                
+
                             }
                         }
-                        setTimeout(function(){
+                        setTimeout(function () {
                             //grab the airport and put that inside the html
                             $("<li>").html('<div class="collapsible-header"><i class="material-icons">local_airport</i>Fly</div><div class="collapsible-body card-panel white" id="fly-body"><p>The closest airport to your destination is the <a href="' + airURL + '" target="_blank">' + airport + '</a>.</p></div>').appendTo("#data-display");
                         }, 2000);

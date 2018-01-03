@@ -29,6 +29,11 @@ body {
 
 }
 
+.card-panel {
+
+	margin: 0px !important;
+}
+
 .card-title {
 
 	font-family: 'Sacramento', cursive;
@@ -54,7 +59,7 @@ body {
 }
 
 .hide {
-	
+
     visibility: hidden;
     position: absolute;
     top: -9999px;

@@ -57,13 +57,11 @@ $(document).ready(function () {
         //
         // NOTE: Free trial subscription keys are generated in the westcentralus region, so if you are using
         // a free trial subscription key, you should not need to change this region.
-        var uriBase = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/analyze";
+        var uriBase = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/models/landmarks/analyze";
 
         // Request parameters.
         var params = {
-            "visualFeatures": "Categories,Description,Color",
-            "details": "",
-            "language": "en",
+           "model": "landmarks",
         };
 
         // Display the image.
@@ -88,8 +86,8 @@ $(document).ready(function () {
 
             .done(function (data) {
                 // Show formatted JSON on webpage.
-
-                landmark = data.categories[0].detail.landmarks[0].name;
+                console.log(data);
+                landmark = data.result.landmarks[0].name;
 
                 //make a text tag with the landmark name.
 

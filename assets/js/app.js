@@ -102,7 +102,9 @@ $(document).ready(function () {
                     console.log(response);
                     var resRes = response.results;
                     //make some html to put our best food in
-                    $("<li>").html('<div class="collapsible-header"><i class="material-icons">restaurant</i>Dine</div><div class="collapsible-body card-panel white" id="fly-body"><ul class="collection" id="rest-data"></ul></div>').appendTo("#data-display");
+
+                    $("<li>").html('<div class="collapsible-header active"><i class="material-icons">restaurant</i>Dine</div><div class="collapsible-body card-panel white" id="fly-body"><ul class="collection" id="rest-data"></ul></div>').appendTo("#data-display");
+
 
                     //make a for loop to make our list items
                     for (var i = 0; i < resRes.length; i++) {
@@ -118,7 +120,8 @@ $(document).ready(function () {
                 }).done(function (response) {
                     var resRes = response.results;
                     //make some html to put our best lodging in
-                    $("<li>").html('<div class="collapsible-header"><i class="material-icons">home</i>Stay</div><div class="collapsible-body card-panel white" id="fly-body"><ul class="collection" id="lodge-data"></ul></div>').appendTo("#data-display");
+
+                    $("<li>").html('<div class="collapsible-header active"><i class="material-icons">home</i>Stay</div><div class="collapsible-body card-panel white" id="fly-body"><ul class="collection" id="lodge-data"></ul></div>').appendTo("#data-display");
 
                     //make a for loop to make our list items
                     for (var i = 0; i < resRes.length; i++) {
@@ -131,9 +134,30 @@ $(document).ready(function () {
                     url: queryURLFlight,
                     method: "GET"
                 }).done(function (response) {
-                    console.log(response);
-                    //grab the airport and put that inside the html
-                    $("<li>").html('<div class="collapsible-header"><i class="material-icons">local_airport</i>Fly</div><div class="collapsible-body card-panel white" id="fly-body"><p>The closest airport to your destination is the ' + response.results[0].name +'.</p></div>').appendTo("#data-display")
+
+                    console.log(response.results[0], name);
+                    var airport = response.results[0].name;
+                    console.log(airport);
+                    var airURL = "https://www.google.com/flights/#search;t="
+
+                    $.getJSON("https://raw.githubusercontent.com/jbrooksuk/JSON-Airports/master/airports.json", function (data) {
+                        console.log(data[0]);
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].name === airport) {
+                                console.log(data[i].iata);
+                                var iata = data[i].iata;
+                                airURL = "https://www.google.com/flights/#search;t=" + iata;
+                                
+                            }
+                        }
+                        setTimeout(function(){
+                            //grab the airport and put that inside the html
+                            $("<li>").html('<div class="collapsible-header active"><i class="material-icons">local_airport</i>Fly</div><div class="collapsible-body card-panel white" id="fly-body"><p>The closest airport to your destination is the <a href="' + airURL + '" target="_blank">' + airport + '</a>.</p></div>').appendTo("#data-display");
+                        }, 2000);
+                    });
+
+
+
 
                 });
 

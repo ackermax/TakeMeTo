@@ -29,6 +29,20 @@ body {
 
 }
 
+#landmark-text {
+
+	text-align: center;
+	font-size: 40px;
+	font-family: 'Roboto', sans-serif;
+
+}
+
+h2 {
+
+	margin: 0px;
+	
+}
+
 .card-panel {
 
 	margin: 0px !important;
@@ -43,6 +57,7 @@ body {
 #card-header {
 
 	font-size: 40px;
+	text-align: center;
 
 }
 

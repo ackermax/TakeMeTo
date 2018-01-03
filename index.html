@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>takemeto</title>
-	<!-- add Firebase -->
+
+	<!-- add firebase -->
 	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 
-		<!--   Added our CSS sheet -->
+	<!-- Add jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- add javascript	 -->
+	<script src="assets/js/app.js"></script>
+	<!-- Added Google Fonts family -->
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	<!--   Added our CSS sheet -->
 	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
 
 		<!-- Added CSS for Materialize -->
@@ -31,6 +44,7 @@
 	<script type="text/javascript" src="assets/js/app.js"></script>
 
 </head>
+
 <body>
 	<!-- 	This wrapper holds our navigation bar -->
 	<div id="nav">
@@ -85,7 +99,7 @@
 			<div class="row">
 				<div class="col m12">
 					<h2 class="header center-align" id="main-panel-header">For those who wander, online and off</h2>
-					<p class="grey-text text-darken-3 lighten-3 center-align">Upload an image of a place that inspires you below.</p>
+					<p class="grey-text text-darken-3 lighten-3 center-align" id="directive">Upload an image of a place that inspires you below.</p>
 					<p class="divider"></p>
 				</div>
 			</div>
@@ -93,13 +107,15 @@
 				<div class="col m12 center-align">
 					<!-- 					Style call for buttons -->
 					<!-- <a class="waves-effect waves-light btn" id="button-action" input name="myFile" type="file">button</a> -->
-					<form>
+					<form id="image-picker">
 						<input type="file" name="" id="photo1">			
 						<button id="submit">Add Image</button>
 					</form>
 				</div>
+
 			</div>
 		</div>
+
 	</div>
 	<!-- Secondary panel shows after user submits the image uploaded-->
 	<div class="container">
@@ -107,7 +123,6 @@
 			<div class="row center-align">
 				<div class="col m12">
 					<div class="row" id="image-hold">
-						<img class="responsive-img" src="" id="imagestay">
 					</div>
 				</div>
 			</div>
@@ -128,7 +143,7 @@
 			<div class="row">
 				<div class="col 16 s12">
 					<h5 class="white-text text-darken-3 lighten-3 center-align" id="footer-head">About takemeto</h5>
-					<p class="white-text text-darken-3 lighten-3 center-align">A project by team JEMS of the UCF Coding Bootcamp using HTML, Materialize CSS framework, custom CSS, Iframes, AJAX requests from several API sources</p>
+					<p class="white-text text-darken-3 lighten-3 center-align">A project by team JEMS of the UCF Coding Bootcamp using HTML, Materialize CSS framework, custom CSS, and AJAX requests from several API sources</p>
 					<ul>
 						<li><a class="white-text text-darken-3 lighten-3" href="https://github.com/ackermax/TakeMeTo" target="blank"><i class="material-icons">subtitles</i>Github</a></li>
 						<li><a class="white-text text-darken-3 lighten-3" href="https://www.facebook.com/ucfcodingbootcamp/" target="blank"><i class="material-icons">school</i>UCF Coding Bootcamp</a></li>
@@ -142,7 +157,6 @@
 			</div>
 		</div>
 	</footer>
-<!-- </div> -->
 
 </body>
 

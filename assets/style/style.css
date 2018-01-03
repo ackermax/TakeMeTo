@@ -1,3 +1,11 @@
+.navbar-fixed {
+
+	font-family: 'Sacramento', cursive;
+	/*background-image: url("../images/rainbow-gradient.png")*/
+	background-color: black;
+
+}
+
 body {
 
 	background-image: url("../images/city-park-bench.jpg");
@@ -17,8 +25,13 @@ body {
 #main-panel-header {
 
 	font-size: 40px;
-	font-family: 'Pragati Narrow', sans-serif;
+	font-family: 'Sacramento', cursive;
 
+}
+
+.card-panel {
+
+	margin: 0px !important;
 }
 
 .card-title {
@@ -31,4 +44,35 @@ body {
 
 	font-size: 40px;
 
+}
+
+#submit {
+
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#page-foot {
+
+	background-color: black;
+
+}
+
+#footer-head {
+
+	font-family: 'Sacramento', cursive;
+
+}
+
+.hide {
+
+    visibility: hidden;
+    position: absolute;
+    top: -9999px;
 }

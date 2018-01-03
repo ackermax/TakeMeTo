@@ -84,20 +84,21 @@ $(document).ready(function () {
 
                 //make a text tag with the landmark name.
 
-                $("<h2>").text("TakeMeTo... " + landmark).appendTo("#button-row").attr("id", "landmark-text");
+                $("<h2>").text("takemeto... " + landmark).appendTo("#button-row").attr("id", "landmark-text");
 
                 //sharona's places api code
-                var queryURLrest = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=restaurant&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
+                var queryURLrest = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=restaurant&key=AIzaSyC7KxkIt-qVDfl6a30zFsclztT9U2jJ2eE"
 
-                var queryURLlodg = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=lodging&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
+                var queryURLlodg = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=lodging&key=AIzaSyC7KxkIt-qVDfl6a30zFsclztT9U2jJ2eE"
 
-                var queryURLFlight = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=airport&key=AIzaSyDvoVUjY-466T_MG7ZUxYXxXzmF6MJusCY"
+                var queryURLFlight = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + landmark + "&type=airport&key=AIzaSyC7KxkIt-qVDfl6a30zFsclztT9U2jJ2eE"
 
 
                 $.ajax({
                     url: queryURLrest,
                     method: "GET"
                 }).done(function (response) {
+                    console.log(response);
 
                     var resRes = response.results;
                     //make some html to put our best food in

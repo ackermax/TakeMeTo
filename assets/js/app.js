@@ -2,7 +2,7 @@ $(document).ready(function () {
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyCSUUtdiqgPpIFoUuCqzclcYYf4Zw-zths",
-        authDomain: "dragdroptest-65a47.firebaseapp.com",
+        authDomain: "dragdroptest-65a47.sapp.com",
         databaseURL: "https://dragdroptest-65a47.firebaseio.com",
         projectId: "dragdroptest-65a47",
         storageBucket: "dragdroptest-65a47.appspot.com",
@@ -11,14 +11,9 @@ $(document).ready(function () {
     firebase.initializeApp(config);
     var url;
     var landmark;
-
-
     var ref = firebase.storage().ref();
     $("#submit").click(function (e) {
         e.preventDefault();
-
-
-
         var file = document.getElementById('photo1').files[0];
         var name = (+new Date()) + '-' + file.name;
         var metadata = {
@@ -39,7 +34,6 @@ $(document).ready(function () {
             console.error(error);
         });
     });
-
 
     function processImage() {
         // **********************************************
@@ -86,7 +80,6 @@ $(document).ready(function () {
 
             .done(function (data) {
                 // Show formatted JSON on webpage.
-                console.log(data);
                 landmark = data.result.landmarks[0].name;
 
                 //make a text tag with the landmark name.
@@ -117,7 +110,6 @@ $(document).ready(function () {
                         //make an li tag and append it to the list tag
                         $("<li>").html("<a href='https://www.google.com/maps/place/?q=place_id:" + resRes[i].place_id + "' target='_blank'>" + resRes[i].name + "</a>").appendTo("#rest-data");
                     }
-                    console.log(response.results[0].name);
                 });
 
                 $.ajax({
@@ -140,17 +132,12 @@ $(document).ready(function () {
                     url: queryURLFlight,
                     method: "GET"
                 }).done(function (response) {
-
-                    console.log(response.results[0], name);
                     var airport = response.results[0].name;
-                    console.log(airport);
                     var airURL = "https://www.google.com/flights/#search;t="
 
                     $.getJSON("https://raw.githubusercontent.com/jbrooksuk/JSON-Airports/master/airports.json", function (data) {
-                        console.log(data[0]);
                         for (var i = 0; i < data.length; i++) {
                             if (data[i].name === airport) {
-                                console.log(data[i].iata);
                                 var iata = data[i].iata;
                                 airURL = "https://www.google.com/flights/#search;t=" + iata;
 

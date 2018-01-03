@@ -58,6 +58,11 @@ body {
     font-size: 16px;
 }
 
+#secondary-panel {
+
+	padding: 40px;
+}
+
 #page-foot {
 
 	background-color: black;

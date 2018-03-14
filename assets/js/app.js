@@ -41,7 +41,7 @@ $(document).ready(function () {
         // **********************************************
 
         // Replace the subscriptionKey string value with your valid subscription key.
-        var subscriptionKey = "a3bc14d0fe3549c087c313308db28bfc";
+        var subscriptionKey = "9d57f68c663c4cd9b13bbf8a93ac7230";
 
         // Replace or verify the region.
         //

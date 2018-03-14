@@ -13,7 +13,7 @@
 
 	<!-- Add jQuery -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
+
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- add javascript	 -->
 	<script src="assets/js/app.js"></script>
@@ -22,17 +22,15 @@
 	<!--   Added our CSS sheet -->
 	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
 
-		<!-- Added CSS for Materialize -->
+	<!-- Added CSS for Materialize -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-		<!-- Added Google Fonts family -->
+	<!-- Added Google Fonts family -->
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 
-		<!-- Added jQuery -->
-	<script
-	src="https://code.jquery.com/jquery-3.2.1.min.js"
-	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	crossorigin="anonymous"></script>
+	<!-- Added jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	 crossorigin="anonymous"></script>
 
 	<!-- Added in icons stylesheet -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -46,107 +44,141 @@
 </head>
 
 <body>
-	<!-- 	This wrapper holds our navigation bar -->
-	<div id="nav">
-		<div class="navbar-fixed">
-			<nav class="black">
-				<div class="nav-wrapper container">
-					<a href="index.html" class="brand-logo"><i class="material-icons">public</i>takemeto</a>
-					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-					<ul class="right hide-on-med-and-down">
-						<li><a href="#modalLogin" class="modal-trigger"><i class="mdi-action-perm-identity"></i></a></li>
-						<li><a href="#"><i class="mdi-navigation-refresh"></i></a></li>
-						<li><a href="#"><i class="mdi-navigation-more-vert"></i></a></li>
-					</ul>
-					<ul class="side-nav" id="mobile-demo">
-						<li>
-							<a href="#">
-								<input id="search" type="search" placeholder="search">
-							</a>
-						</li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</div>
-	<!-- Search functionality for nav bar -->
-<!-- 	<nav class="black lighten-2 flat hide-on-med-and-down">
-		<div class="nav-wrapper container">
-			<form>
-				<div class="input-field">
-					<input id="search" type="search" required="">
-					<label for="search"><i class="mdi-action-search"></i></label>
-					<i class="mdi-navigation-close"></i>
-				</div>
-			</form>
-		</div>
-	</nav> -->
-	<!-- This container holds our header -->
-	<div class="container">
-		<div class="row">
-			<div class="col m12" id="header">
-				<h1 id="main-logo">takemeto</h1>
+	<header>
+		<!-- 	This wrapper holds our navigation bar -->
+		<div id="nav">
+			<div class="navbar-fixed">
+				<nav class="black">
+					<div class="nav-wrapper container">
+						<a href="index.html" class="brand-logo">
+							<i class="material-icons">public</i>takemeto</a>
+						<a href="#" data-activates="mobile-demo" class="button-collapse">
+							<i class="mdi-navigation-menu"></i>
+						</a>
+						<ul class="right hide-on-med-and-down">
+							<li>
+								<a href="#modalLogin" class="modal-trigger">
+									<i class="mdi-action-perm-identity"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="mdi-navigation-refresh"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="mdi-navigation-more-vert"></i>
+								</a>
+							</li>
+						</ul>
+						<ul class="side-nav" id="mobile-demo">
+							<li>
+								<a href="#">
+									<input id="search" type="search" placeholder="search">
+								</a>
+							</li>
+							<li>
+								<a href="#">Link</a>
+							</li>
+							<li>
+								<a href="#">Link</a>
+							</li>
+							<li>
+								<a href="#">Link</a>
+							</li>
+							<li>
+								<a href="#">Link</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
 			</div>
 		</div>
-	</div>
-	<!-- 	Container holds main panel -->
-	<div class="container">
-		<div class="section white z-depth-5" id="main-panel">
+	</header>
+	<main>
+		<!-- Search functionality for nav bar -->
+		<!-- 	<nav class="black lighten-2 flat hide-on-med-and-down">
+			<div class="nav-wrapper container">
+				<form>
+					<div class="input-field">
+						<input id="search" type="search" required="">
+						<label for="search"><i class="mdi-action-search"></i></label>
+						<i class="mdi-navigation-close"></i>
+					</div>
+				</form>
+			</div>
+		</nav> -->
+		<!-- This container holds our header -->
+		<div class="container">
 			<div class="row">
-				<div class="col m12">
-					<h2 class="header center-align" id="main-panel-header">For those who wander, online and off</h2>
-					<p class="grey-text text-darken-3 lighten-3 center-align" id="directive">Upload an image of a place that inspires you below.</p>
-					<p class="divider"></p>
+				<div class="col m12" id="header">
+					<h1 id="main-logo">takemeto</h1>
 				</div>
-			</div>
-			<div class="row" id="button-row">
-				<div class="col m12 center-align">
-					<!-- 					Style call for buttons -->
-					<!-- <a class="waves-effect waves-light btn" id="button-action" input name="myFile" type="file">button</a> -->
-					<form id="image-picker">
-						<input type="file" name="" id="photo1">			
-						<button id="submit">Add Image</button>
-					</form>
-				</div>
-
 			</div>
 		</div>
+		<!-- 	Container holds main panel -->
+		<div class="container">
+			<div class="section white z-depth-5" id="main-panel">
+				<div class="row">
+					<div class="col m12">
+						<h2 class="header center-align" id="main-panel-header">For those who wander, online and off</h2>
+						<p class="grey-text text-darken-3 lighten-3 center-align" id="directive">Upload an image of a place that inspires you below.</p>
+						<p class="divider"></p>
+					</div>
+				</div>
+				<div class="row" id="button-row">
+					<div class="col m12 center-align">
+						<!-- 					Style call for buttons -->
+						<!-- <a class="waves-effect waves-light btn" id="button-action" input name="myFile" type="file">button</a> -->
+						<form id="image-picker">
+							<input type="file" name="" id="photo1">
+							<button id="submit">Add Image</button>
+						</form>
+					</div>
 
-	</div>
-	<!-- Secondary panel shows after user submits the image uploaded-->
-	<div class="container">
-		<div class="section white z-depth-5" id="secondary-panel">
-			<div class="row center-align">
-				<div class="col m12">
-					<div class="row" id="image-hold">
+				</div>
+			</div>
+
+		</div>
+		<!-- Secondary panel shows after user submits the image uploaded-->
+		<div class="container">
+			<div class="section white z-depth-5" id="secondary-panel">
+				<div class="row center-align">
+					<div class="col m12">
+						<div class="row" id="image-hold">
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Testing collapsible container for holding populated data -->
-	<div class="container">	
-		<ul class="collapsible popout" data-collapsible="expandable" id="data-display">
+		<!-- Testing collapsible container for holding populated data -->
+		<div class="container">
+			<ul class="collapsible popout" data-collapsible="expandable" id="data-display">
 
-		</ul>
-	</div> 
-	<!-- 	Container holds cards showcasing UI possibilities-->
-	<!-- 	</div> -->
+			</ul>
+		</div>
+		<!-- 	Container holds cards showcasing UI possibilities-->
+		<!-- 	</div> -->
+	</main>
 	<!--Adding footer -->
 	<footer class="page-footer" id="page-foot">
 		<div class="container">
 			<div class="row">
 				<div class="col 16 s12">
 					<h5 class="white-text text-darken-3 lighten-3 center-align" id="footer-head">About takemeto</h5>
-					<p class="white-text text-darken-3 lighten-3 center-align">A project by team JEMS of the UCF Coding Bootcamp using HTML, Materialize CSS framework, custom CSS, and AJAX requests from several API sources</p>
+					<p class="white-text text-darken-3 lighten-3 center-align">A project by team JEMS of the UCF Coding Bootcamp using HTML, Materialize CSS framework, custom CSS, and AJAX requests
+						from several API sources</p>
 					<ul>
-						<li><a class="white-text text-darken-3 lighten-3" href="https://github.com/ackermax/TakeMeTo" target="blank"><i class="material-icons">subtitles</i>Github</a></li>
-						<li><a class="white-text text-darken-3 lighten-3" href="https://www.facebook.com/ucfcodingbootcamp/" target="blank"><i class="material-icons">school</i>UCF Coding Bootcamp</a></li>
+						<li>
+							<a class="white-text text-darken-3 lighten-3" href="https://github.com/ackermax/TakeMeTo" target="blank">
+								<i class="material-icons">subtitles</i>Github</a>
+						</li>
+						<li>
+							<a class="white-text text-darken-3 lighten-3" href="https://www.facebook.com/ucfcodingbootcamp/" target="blank">
+								<i class="material-icons">school</i>UCF Coding Bootcamp</a>
+						</li>
 					</ul>
 				</div>
 			</div>
